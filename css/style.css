@@ -8357,7 +8357,7 @@ h1, h2, h3, h4, h5,
     right: 0;
     bottom: 0;
     content: '';
-    opacity: .5;
+    opacity: .55;
     background: #4a3d70;
     height: 850px; }
   @media (max-width: 991.98px) {
@@ -9458,7 +9458,7 @@ textarea.form-control {
     bottom: 0;
     content: '';
     opacity: 0;
-    background: #93E9BE; }
+    background: #5EA96D; }
     @media (min-width: 992px) {
       .ftco-counter .overlay {
         opacity: .3; } }
