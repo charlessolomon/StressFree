@@ -9447,7 +9447,9 @@ textarea.form-control {
     z-index: -1;
     opacity: 0;
     background: #0C0817; }
-
+  option{
+    background-color: inherit;
+  }
 .ftco-counter {
   position: relative; }
   .ftco-counter .overlay {
