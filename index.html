@@ -71,6 +71,7 @@
     				<div class="row no-gutters">
 	  					<div class="col-md-4 d-flex align-items-center">
 	  						<form action="#" class="request-form ftco-animate bg-dark">
+								<form onsubmit = "sendEmail() reset(); return false;">
 		          		<h2>Request Service</h2>
 			    				<div class="form-group">
 			    					<label for="" class="label">Full Name</label>
@@ -95,10 +96,30 @@
                         <option value="Cloud Services">Cloud Services</option>
                       </select>
 			              </div>
+								<script> src="https://smtpjs.com/v3/smtp.js" </script>
+					<script> 
+						function sendEmail() {
+							Email.send({
+                                                              Host : "smtp.mailendo.com",
+                                                              Username : "stressfreetechnology4@gmail.com",
+                                                              Password : "password",
+                                                              To : 'stressfreetechnology4@gmail.com',
+                                                              From : "document.getElementById("email").value",
+                                                              Subject : "New Contact Form ",
+                                                              Body : "Name:" + document.getElementById("name").value
+								+ "<br> Email:" + document.getElementById("email").value
+								+ "<br> Phone Number:" + document.getElementById("Phone number").value
+								+ "<br> Message:" + document.getElementById("message").value
+                                                              }).then(
+                                                              message => alert("Message Sent")
+                                                                                     );
+						}
+					</script>
 		              </div>
                   <div class="form-group">
-			    					<label for="" class="label">Preferred Contact Method</label>
-			    					<select class="form-control" name="book_off" id="time_pick" placeholder=" Via Email / Phone Number">
+			  
+			<label for="" class="label">Preferred Contact Method</label>
+			<select class="form-control" name="book_off" id="time_pick" placeholder=" Via Email / Phone Number">
                       <option value="">Via Email / Phone Number</option>
                       <option value="Phone Number">Phone Number</option>
                       <option value="Email Address">Email Address</option>
@@ -113,6 +134,7 @@
 			            </div>
 			    			</form>
 	  					</div>
+					
 	  					<div class="col-md-8 d-flex align-items-center">
 	  						<div class="services-wrap rounded-right w-100">
 	  							<h3 class="heading-section mb-4">Simplify Your Tech Journey with Ease</h3>
