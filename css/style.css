@@ -2271,6 +2271,30 @@ fieldset:disabled a.btn {
       -webkit-box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
       box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5); }
 
+
+
+      .btn-fair {
+        color: #fff;
+        background-color: #E74C3C !important;
+        border-color: #31215c; }
+        .btn-fair:hover {
+          color: #fff;
+          background-color: #993b30 !important;
+          border-color: #4A3D70; }
+        .btn-dark:focus, .btn-dark.focus {
+          -webkit-box-shadow: 0 0 0 0.1rem #31215C;
+          box-shadow: 0 0 0 0.1rem #31215C; }
+        .btn-dark.disabled, .btn-dark:disabled {
+          color: #fff;
+          background-color: #4A3D70;
+          border-color: #4A3D70; }
+          .btn-dark:not(:disabled):not(.disabled):active:focus, .btn-dark:not(:disabled):not(.disabled).active:focus,
+          .show > .btn-dark.dropdown-toggle:focus {
+            -webkit-box-shadow: 0 0 0 0.1rem #31215C;
+            box-shadow: 0 0 0 0.1rem #31215C; }
+      
+
+
 .btn-outline-primary {
   color: #4A3d70;
   border-color: #4A3d70; }
@@ -8357,14 +8381,14 @@ h1, h2, h3, h4, h5,
     right: 0;
     bottom: 0;
     content: '';
-    opacity: .55;
+    opacity: .5;
     background: #4a3d70;
     height: 850px; }
   @media (max-width: 991.98px) {
     .hero-wrap {
-      height: 1150px; }
+      height: 1230px; }
       .hero-wrap .overlay {
-        height: 1150px; } }
+        height: 1230px; } }
   .hero-wrap.hero-wrap-2 {
     height: 600px !important;
     position: relative; }
@@ -9171,8 +9195,8 @@ textarea.form-control {
     .ftco-footer .ftco-footer-widget ul li a span {
       color: #fff; }
   .ftco-footer .ftco-footer-widget .btn-primary {
-    background: transparent; !important;
-    border: 2px solid black; !important; }
+    background: transparent !important;
+    border: 2px solid black !important; }
     .ftco-footer .ftco-footer-widget .btn-primary:hover {
       background: #E74C3C;
       border: 1px solid #31325C !important; }
@@ -9479,7 +9503,48 @@ textarea.form-control {
   @media (max-width: 767.98px) {
     .ftco-counter .counter-wrap {
       margin-bottom: 20px; } }
+.wrapper {
+    width: 1000px;
+    max-width: 100%;
+    position: relative;
+  
+}
+.wrapper input {
+    width: 100%;
+    height: calc(2.3rem + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid #31215C;
+    border-radius: 0.25rem;
+  
+}
 
+.wrapper button{
+    aspect-ratio: 1;
+    height: 100%;
+    background-color: #E74C3C;
+    position: absolute;
+    right: 0;
+    border-radius: 3px;
+    font-weight: 400;
+    font-size: 1.3rem;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 2px solid #31215C;
+    padding: 0.375rem 0.75rem;
+
+}
+      
 .block-20 {
   overflow: hidden;
   background-size: cover;
