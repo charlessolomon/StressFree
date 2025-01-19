@@ -95,25 +95,7 @@
                         <option value="Cloud Services">Cloud Services</option>
                       </select>
 			              </div>
-								<script> src="https://smtpjs.com/v3/smtp.js" </script>
-					<script> 
-						function sendEmail() {
-							Email.send({
-                                                              Host : "smtp.mailendo.com",
-                                                              Username : "ezekielelijahkola@gmail.com",
-                                                              Password : "computerangel",
-                                                              To : 'ezekielelijahkola@gmail.com',
-                                                              From : "document.getElementById("email").value",
-                                                              Subject : "New Contact Form ",
-                                                              Body : "Name:" + document.getElementById("name").value
-								+ "<br> Email:" + document.getElementById("email").value
-								+ "<br> Phone Number:" + document.getElementById("Phone number").value
-								+ "<br> Message:" + document.getElementById("message").value
-                                                              }).then(
-                                                              message => alert("Message Sent")
-                                                                                     );
-						}
-					</script>
+
 		              </div>
                   <div class="form-group">
 			  
@@ -163,6 +145,66 @@
 					            </div>      
 					          </div>
 					        </div>
+								<script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Initialize EmailJS
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+        })();
+
+        // Form submission handler
+        document.getElementById('serviceForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitBtn = document.getElementById('submitBtn');
+            const originalContent = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i data-lucide="loader-2" class="h-5 w-5 animate-spin"></i><span>Sending...</span>';
+            submitBtn.disabled = true;
+            lucide.createIcons();
+
+            // Prepare template parameters
+            const templateParams = {
+                from_name: document.getElementById('fullName').value,
+                from_email: document.getElementById('email').value,
+                company_name: document.getElementById('companyName').value,
+                service_type: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+
+            // Send email using EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then(function() {
+                    // Show success message
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Request Sent!',
+                        text: 'We\'ll get back to you within 24 hours.',
+                        confirmButtonColor: '#4F46E5'
+                    });
+                    
+                    // Reset form
+                    document.getElementById('serviceForm').reset();
+                }, function(error) {
+                    // Show error message
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong! Please try again later.',
+                        confirmButtonColor: '#4F46E5'
+                    });
+                    console.error('EmailJS error:', error);
+                })
+                .finally(function() {
+                    // Restore button state
+                    submitBtn.innerHTML = originalContent;
+                    submitBtn.disabled = false;
+                    lucide.createIcons();
+                });
+        });
+							</script>
 					       
 	  						</div>
 	  					</div>
